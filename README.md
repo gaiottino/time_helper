@@ -16,7 +16,8 @@ Most of the time I use the methods in combination with Time objects but by defau
 
     3.minutes == 180
     
-But they become more useful when used in combination of a Time object or with the ago/from_now methods. At noon of April 17, 1964 `Time.utc(1964, 4, 17, 12)` these would be the results
+But they become more useful when used in combination of a Time object or with the ago/from_now methods.
+At noon of April 17, 1964 `Time.utc(1964, 4, 17, 12)` these would be the results
 
     3.days.ago == Time.utc(1964, 4, 14, 12)
     
