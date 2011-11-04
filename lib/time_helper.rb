@@ -44,3 +44,18 @@ else
     puts "WARNING: Numeric has already been altered to include a method called #{method}. TimeHelper will not be included"
   end
 end
+
+class Time
+  def change(options)
+    ::Time.send(
+      utc? ? :utc : :local,
+      options[:year]  || year,
+      options[:month] || month,
+      options[:day]   || day,
+      options[:hour]  || hour,
+      options[:min]   || (options[:hour] ? 0 : min),
+      options[:sec]   || ((options[:hour] || options[:min]) ? 0 : sec),
+      options[:usec]  || ((options[:hour] || options[:min] || options[:sec]) ? 0 : usec)
+    )
+  end
+end
